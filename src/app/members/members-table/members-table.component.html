@@ -1,9 +1,28 @@
-<h2>Members Page</h2>
-<button (click)="loadMembers()">Load</button>
-<table>
-  <thead app-member-head></thead>
-  <tbody>
-    <tr app-member-row [member]="member" *ngFor="let member of members">
-    </tr>
-  </tbody>
-</table>
+<div class="row justify-content-center">
+  <div class="col-sm-10 text-center">
+    <h2>Members Page</h2>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-sm-10">
+    <button (click)="loadMembers()">Load</button>
+  </div>
+</div>
+<div *ngIf="members?.length" class="row justify-content-center">
+  <div class="col-sm-10">
+      <div class="table-responsive-sm">
+    <table class="table table-bordered">
+      <thead app-member-head></thead>
+      <tbody>
+        <tr app-member-row [member]="member" *ngFor="let member of returnedmembers">
+        </tr>
+      </tbody>
+    </table>
+    <pagination
+      [itemsPerPage]="itemsPerPage"
+      [totalItems]="members.length" 
+      (pageChanged)="pageChanged($event)">
+    </pagination>
+    </div>
+  </div>
+</div>

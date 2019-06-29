@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { CommonModule } from '@angular/common';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 import {
   MemberRowComponent,
   MemberHeadComponent,
@@ -9,6 +10,7 @@ import {
 
 @NgModule({
   imports: [
+    PaginationModule.forRoot(),
     CommonModule,
     HttpClientModule,
   ],
