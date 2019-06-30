@@ -44,7 +44,9 @@
       <span></span>
       <pagination
         [itemsPerPage]="itemsPerPage"
-        [totalItems]="members.length" 
+        [totalItems]="members.length"
+        [rotate]="true"
+        [maxSize]="3"
         (pageChanged)="pageChanged($event)">
       </pagination>
     </footer>
