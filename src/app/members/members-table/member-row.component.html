@@ -1,9 +1,12 @@
-<td>
-  <img [src]="member.avatar_url" style="max-width:10rem;" />
+<td class="text-center">
+  <img 
+    [src]="member.avatar_url" 
+    [alt]="member.login"
+    class="border border-primary rounded-circle" />
 </td>
-<td>
+<td class="text-center">
   <span>{{member.id}}</span>
 </td>
-<td>
+<td class="text-center">
   <span>{{member.login}}</span>
 </td>

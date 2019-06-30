@@ -7,23 +7,23 @@
       </app-member-form>
       </nav>
 </div>
-  <div class="container">
+  <div class="container pb-5">
 <div class="row justify-content-center">
   <div class="col-sm-10">
       <div class="table-responsive-sm">
-    <table class="table table-bordered">
+    <table class="table">
       <thead app-member-head></thead>
       <tbody>
         <tr *ngIf="isLoading" class="text-center">
-          <td colspan="3">
-            <div class="spinner-grow" role="status">
+          <td colspan="3" class="p-5">
+            <div class="spinner-grow text-info" role="status">
                 <span class="sr-only">Loading...</span>
               </div>
           </td>
         </tr>
         <tr *ngIf="!isLoading && !members?.length" class="text-center">
             <td colspan="3">
-              <span>Nothing to display!!</span>
+              <span>{{error | titlecase}}</span>
             </td>
           </tr>
         <ng-container *ngIf="members?.length">
@@ -39,8 +39,9 @@
 </div>
 </div>
 </div>
-<div class="fixed-bottom">
+<div *ngIf="members?.length > itemsPerPage" class="fixed-bottom">
     <footer class="navbar navbar-light bg-light">
+      <span></span>
       <pagination
         [itemsPerPage]="itemsPerPage"
         [totalItems]="members.length" 

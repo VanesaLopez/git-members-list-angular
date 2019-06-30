@@ -9,6 +9,7 @@
             id="organization">
     </div>
     <button 
+        [disabled]="!organization"
         type="submit" 
         class="btn btn-primary mb-2"
         (click)="changeOrganization()">
